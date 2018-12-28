@@ -32,7 +32,6 @@ private:
     char m_fullCommand[1000];
     int* m_argc;
     char * m_argv[10];
-
 };
 
 #endif //EXCELLENTEAM_ELLA_C_DNA_WALL_ET_CLI_H

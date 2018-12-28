@@ -5,7 +5,8 @@
 #ifndef EXCELLENTEAM_ELLA_C_DNA_WALL_ET_PARSER_H
 #define EXCELLENTEAM_ELLA_C_DNA_WALL_ET_PARSER_H
 
-class Parser{
+class Parser
+{
 public:
     void parseString(int* argc, char* argv[]);
 };
