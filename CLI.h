@@ -27,8 +27,9 @@ private:
     inline bool parseCommand();
     inline void callFunctionByCommand() const;
 
+    Parser parser;
     static commandsCallbackMap m_commandsAPI;
-    char fullCommand[1000];
+    char m_fullCommand[1000];
     int* m_argc;
     char * m_argv[10];
 
