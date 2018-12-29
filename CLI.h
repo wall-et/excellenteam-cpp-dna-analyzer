@@ -18,7 +18,7 @@ public:
     void run();
 
 private:
-    CLI();
+    CLI(commandsCallbackMap);
     ~CLI();
     CLI(CLI const&); //not implemented
     CLI& operator=(CLI const&); //not implemented
@@ -28,7 +28,8 @@ private:
     inline void callFunctionByCommand() const;
 
     Parser parser;
-    static commandsCallbackMap m_commandsAPI;
+//    static commandsCallbackMap m_commandsAPI;
+    static CommandFunction m_commandCallback;
     char m_fullCommand[1000];
     int* m_argc;
     char * m_argv[10];
