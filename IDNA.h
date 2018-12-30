@@ -7,7 +7,7 @@
 
 #include <iostream>
 
-#include "../SharedPtr.h"
+#include "SharedPtr.h"
 
 class IDNA
 {

@@ -8,8 +8,8 @@
 #include <iostream>
 #include <map>
 
-#include "./DNA/IDNA.h"
-#include "./DNA/DNASequence.h"
+#include "IDNA.h"
+#include "DNASequence.h"
 #include "SharedPtr.h"
 
 typedef SharedPtr<IDNA> IDNAp;

@@ -5,12 +5,16 @@
 #ifndef EXCELLENTEAM_ELLA_C_DNA_WALL_ET_NEWCOMMAND_H
 #define EXCELLENTEAM_ELLA_C_DNA_WALL_ET_NEWCOMMAND_H
 
-class NewCommand
+#include "ICommand.h"
+
+class NewCommand : public ICommand
 {
 public:
-    NewCommand(int argc, char* argv[]);
+//    NewCommand();
     ~NewCommand();
-    void run();
+    void run(int argc, char** argv);
+
 private:
 };
+
 #endif //EXCELLENTEAM_ELLA_C_DNA_WALL_ET_NEWCOMMAND_H

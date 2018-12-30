@@ -24,20 +24,39 @@ public:
     void run();
 
 private:
-//    CLI(CLI const&); //not implemented
-//    CLI& operator=(CLI const&); //not implemented
-
     inline void readLine();
     inline bool parseCommand();
     inline void executeCommand();
 
-//    static CLI* m_instance;
-    Parser m_parser;
-//    static commandsCallbackMap m_commandsAPI;
-    CommandFunction m_commandCallback;
-    char m_fullCommand[1000];
-    int m_argc;
-    char* m_argv[10];
+    Parser              m_parser;
+    CommandFunction     m_commandCallback;
+    char                m_fullCommand[1000];
+    int                 m_argc;
+    char*               m_argv[10];
 };
+
+
+inline void CLI::readLine()
+{
+    fgets(m_fullCommand, sizeof(m_fullCommand), stdin);
+}
+
+inline bool CLI::parseCommand()
+{
+    try
+    {
+        m_parser.parseString(m_fullCommand,&m_argc,m_argv);
+    }
+    catch (...)
+    {
+        return false;
+    }
+    return true;
+}
+
+inline void CLI::executeCommand()
+{
+    m_commandCallback(m_argc,m_argv);
+}
 
 #endif //EXCELLENTEAM_ELLA_C_DNA_WALL_ET_CLI_H

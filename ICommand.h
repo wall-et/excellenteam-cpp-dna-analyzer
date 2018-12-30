@@ -10,9 +10,10 @@
 class ICommand
 {
 public:
-//    ICommand();
-    virtual ~ICommand() = 0;
-    virtual void run();
+//    ICommand(){};
+    virtual ~ICommand(){};
+    virtual void run(int argc, char** argv) = 0;
+
 private:
 };
 #endif //EXCELLENTEAM_ELLA_C_DNA_WALL_ET_ICOMMAND_H

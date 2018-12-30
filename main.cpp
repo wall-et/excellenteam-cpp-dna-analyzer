@@ -9,11 +9,14 @@
 #include "DNAAnalyzer.h"
 #include "CLI.h"
 #include "ActiveDNACache.h"
-#include "./DNA/IDNA.h"
-#include "Commands/ICommand.h"
+#include "IDNA.h"
+#include "ICommand.h"
 
 
 int main(){
+
+    DNAAnalyzer* analyzer = new DNAAnalyzer();
+    analyzer->run();
 
     std::cout << "compiled!" << std::endl;
     return 0;
