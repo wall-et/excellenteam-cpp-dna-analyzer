@@ -13,6 +13,7 @@
 #include "SharedPtr.h"
 
 typedef SharedPtr<IDNA> IDNAp;
+
 typedef struct{
     char* name;
     size_t id;
@@ -23,16 +24,16 @@ class ActiveDNACache
 public:
     ActiveDNACache();
     ~ActiveDNACache();
-    void loadDNA(char*,IDNAp);
-    IDNAp getDNA(char*) const;
-    void deleteDNA(char*);
+//    void loadDNA(char*,IDNAp);
+//    IDNAp getDNA(char*) const;
+//    void deleteDNA(char*);
+    IDNAp getDNAById(char*);
+    IDNAp getDNAByName(char*);
+    void loadDNAById(char*);
+    void loadDNAByName(char*);
+    void deleteDNAById(char*);
+    void deleteDNAByName(char*);
 private:
-    inline void addDNAById(char*);
-    inline void addDNAByName(char*);
-    inline void loadDNAById(char*);
-    inline void loadDNAByName(char*);
-    inline void deleteDNAById(char*);
-    inline void deleteDNAByName(char*);
 
     static std::map<DNAIdentifier, IDNAp> m_DNAContainer;
 };

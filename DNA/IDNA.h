@@ -14,10 +14,9 @@ class IDNA
 public:
     IDNA();
     virtual ~IDNA();
-private:
 protected:
-    virtual size_t getDNALength() const = 0 ;
-    virtual char  operator[](const size_t index) = 0;
+    virtual unsigned long getDNALength() const = 0 ;
+    virtual char operator[](const size_t index) = 0;
     class Nucleotide
     {
     protected:
@@ -33,8 +32,10 @@ protected:
 
         char m_singleNucleotide;
     private:
-        void check_if_valid(char c_to_check);
+//        void check_if_valid(char c_to_check);
     };
+private:
+    static size_t m_dnasCounter;
 };
 
 #endif //EXCELLENTEAM_ELLA_C_DNA_WALL_ET_IDNA_H

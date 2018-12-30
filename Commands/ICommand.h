@@ -5,12 +5,14 @@
 #ifndef EXCELLENTEAM_ELLA_C_DNA_WALL_ET_ICOMMAND_H
 #define EXCELLENTEAM_ELLA_C_DNA_WALL_ET_ICOMMAND_H
 
+
+
 class ICommand
 {
 public:
 //    ICommand();
-    virtual ~ICommand();
-    void run();
+    virtual ~ICommand() = 0;
+    virtual void run();
 private:
 };
 #endif //EXCELLENTEAM_ELLA_C_DNA_WALL_ET_ICOMMAND_H

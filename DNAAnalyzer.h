@@ -13,13 +13,15 @@
 #include "Commands/PrintCommand.h"
 #include "Commands/SaveCommand.h"
 
-class CommandsInterpreter
+typedef std::map<char *, CommandFunction> commandsCallbackMap;
+
+class DNAAnalyzer
 {
 public:
-    CommandsInterpreter();
-    void excuteCommand(int*, char* argv[]);
+    DNAAnalyzer();
+    static void excuteCommand(int argc, char** argv);
 private:
-    CLI m_cli;
+    CLI* m_cli;
     static commandsCallbackMap m_commandsMap;
 };
 
