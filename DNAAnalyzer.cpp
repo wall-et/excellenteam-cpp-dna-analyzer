@@ -8,29 +8,29 @@
 
 DNAAnalyzer::DNAAnalyzer()
 {
-    m_cli = new CLI(&excuteCommand);
-//    m_memoryController = new MemoryController();
+    m_args = new commandArgs();
 }
-
-DNAAnalyzer::~DNAAnalyzer()
-{}
 
 void DNAAnalyzer::run(){
+
     while(true)
     {
-        m_cli->run();
+//        std::cout << "point 1" <<std::endl;
+        m_cli.run(m_args);
+        excuteCommand();
+//        std::cout << "point 2" <<std::endl;
     }
 }
 
-void DNAAnalyzer::excuteCommand(int argc, char **argv)
+void DNAAnalyzer::excuteCommand()
 {
-    if(strcmp(argv[0],"new")==0)
+    if(strcmp(m_args->argv[0],"new")==0)
     {
         ICommand* newC = new NewCommand();
-//        IDNAp newdna = newC->run(argc,argv);
-        newC->run(argc,argv,m_memoryController);
+        newC->run(m_args->argc,m_args->argv,m_memoryController);
     }
-    if(strcmp(argv[0],"exit")==0) {
+    if(strcmp(m_args->argv[0],"exit")==0)
+    {
         exit(0);
     }
 }

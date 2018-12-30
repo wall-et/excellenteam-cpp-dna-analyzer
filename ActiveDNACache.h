@@ -27,20 +27,26 @@ typedef struct{
 class ActiveDNACache
 {
 public:
-//    ActiveDNACache();
-    ~ActiveDNACache();
-//    void loadDNA(char*,IDNAp);
-//    IDNAp getDNA(char*) const;
-//    void deleteDNA(char*);
-    IDNAp getDNAById(char*);
-    IDNAp getDNAByName(char*);
-    void loadDNAById(char*);
-    void loadDNAByName(char*);
-    void deleteDNAById(char*);
-    void deleteDNAByName(char*);
-private:
+//    ActiveDNACache(){};
+//    ~ActiveDNACache(){};
+    void addDNA(DNAIdentifier,IDNAp);
 
-    static std::map<DNAIdentifier, IDNAp> m_DNAContainer;
+private:
+    inline void addDNAByName(DNAIdentifier,IDNAp);
+    inline void addDNAById(DNAIdentifier,IDNAp);
+
+    std::map<char*, IDNAp> m_DNAContainerByName;
+    std::map<size_t, IDNAp> m_DNAContainerById;
 };
+
+void ActiveDNACache::addDNAByName(DNAIdentifier ids,IDNAp seq)
+{
+    m_DNAContainerByName.insert(std::pair<char*,IDNAp>(ids.name,seq));
+}
+
+void ActiveDNACache::addDNAById(DNAIdentifier ids,IDNAp seq)
+{
+    m_DNAContainerById.insert(std::pair<size_t,IDNAp>(ids.id,seq));
+}
 
 #endif //EXCELLENTEAM_ELLA_C_DNA_WALL_ET_ACTIVEDNACACHE_H

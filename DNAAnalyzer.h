@@ -22,21 +22,23 @@
 typedef SharedPtr<IDNA> IDNAp;
 #endif //IDNAP
 
+typedef void (*CommandFunction)(int argc,char ** argv); // function pointer type
 typedef std::map<char *, CommandFunction> commandsCallbackMap;
+
 
 
 class DNAAnalyzer
 {
 public:
     DNAAnalyzer();
-    ~DNAAnalyzer();
     void run();
-    static void excuteCommand(int argc, char** argv);
+    void excuteCommand();
 private:
     inline void commandNew(int argc, char** argv);
 
-    CLI*                            m_cli;
-    MemoryController        m_memoryController;
+    CLI                             m_cli;
+    commandArgs*                    m_args;
+    MemoryController                m_memoryController;
     static commandsCallbackMap      m_commandsMap;
 };
 

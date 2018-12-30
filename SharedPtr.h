@@ -62,6 +62,7 @@ void SharedPtr<T>::release()
 {
     if((*refCount) <= 0)
     {
+        std::cout <<"DESTROY"<<std::endl;
         delete refCount;
         delete m_ptr;
     }

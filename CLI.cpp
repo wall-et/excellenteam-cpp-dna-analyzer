@@ -5,18 +5,20 @@
 #include <iostream>
 #include "CLI.h"
 
-CLI::CLI(CommandFunction cb)
-{
-    m_commandCallback = cb;
-}
+//CLI::CLI(CommandFunction cb)
+//{
+//    m_commandCallback = cb;
+//}
 
-void CLI::run()
+void CLI::run(commandArgs* args)
 {
 //    while(true)
     {
-        std::cout << "cmd >>>";
+        std::cout << "> cmd >>>";
         readLine();
         parseCommand();
-        executeCommand();
+//        executeCommand();
     }
+    args->argc = m_argc;
+    args->argv = m_argv;
 }

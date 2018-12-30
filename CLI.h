@@ -12,11 +12,10 @@
 #include <map>
 #include "Parser.h"
 
-//typedef void (*CommandFunction)(int argc,char ** argv); // function pointer type
 typedef struct
 {
     int argc;
-    char** argv
+    char** argv;
 } commandArgs;
 
 class CLI
@@ -24,14 +23,14 @@ class CLI
 public:
 //    CLI();
 //    CLI(CommandFunction);
-    ~CLI();
+//    ~CLI(){};
 //    static CLI* getInstance(CommandFunction);
     void run(commandArgs*);
 
 private:
     inline void readLine();
     inline bool parseCommand();
-    inline void executeCommand();
+//    inline void executeCommand();
 
     Parser              m_parser;
 //    CommandFunction     m_commandCallback;
@@ -59,9 +58,9 @@ inline bool CLI::parseCommand()
     return true;
 }
 
-inline void CLI::executeCommand()
-{
-    m_commandCallback(m_argc,m_argv);
-}
+//inline void CLI::executeCommand()
+//{
+//    m_commandCallback(m_argc,m_argv);
+//}
 
 #endif //EXCELLENTEAM_ELLA_C_DNA_WALL_ET_CLI_H
