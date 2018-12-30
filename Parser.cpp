@@ -8,10 +8,11 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <iostream>
 //#include <sys/wait.h>
 
-void Parser::parseString(char* fullCommand, int* argc, char** argv){
-
+void Parser::parseString(char* fullCommand, int* argc, char** argv)
+{
     const char delim[]={'\t','\n',' '};
     int i;
     i= 0;

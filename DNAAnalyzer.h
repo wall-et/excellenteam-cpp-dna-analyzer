@@ -23,6 +23,8 @@ public:
     void run();
     static void excuteCommand(int argc, char** argv);
 private:
+    inline void commandNew(int argc, char** argv);
+
     CLI*                            m_cli;
     static commandsCallbackMap      m_commandsMap;
 };
