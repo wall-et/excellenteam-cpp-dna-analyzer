@@ -8,21 +8,26 @@
 #include <iostream>
 #include <map>
 
-#include "IDNA.h"
 #include "DNASequence.h"
 #include "SharedPtr.h"
 
+#ifndef IDNAP
+#define IDNAP
+#include "IDNA.h"
 typedef SharedPtr<IDNA> IDNAp;
+#endif //IDNAP
 
 typedef struct{
     char* name;
     size_t id;
 } DNAIdentifier;
 
+
+
 class ActiveDNACache
 {
 public:
-    ActiveDNACache();
+//    ActiveDNACache();
     ~ActiveDNACache();
 //    void loadDNA(char*,IDNAp);
 //    IDNAp getDNA(char*) const;

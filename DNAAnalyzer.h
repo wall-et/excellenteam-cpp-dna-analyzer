@@ -6,6 +6,8 @@
 #define EXCELLENTEAM_ELLA_C_DNA_WALL_ET_COMMANDINTERPETER_H
 
 #include "CLI.h"
+#include "MemoryController.h"
+#include "SharedPtr.h"
 #include "ICommand.h"
 #include "NewCommand.h"
 //#include "Commands/ExitCommand.h"
@@ -13,7 +15,15 @@
 //#include "Commands/PrintCommand.h"
 //#include "Commands/SaveCommand.h"
 
+
+#ifndef IDNAP
+#define IDNAP
+#include "IDNA.h"
+typedef SharedPtr<IDNA> IDNAp;
+#endif //IDNAP
+
 typedef std::map<char *, CommandFunction> commandsCallbackMap;
+
 
 class DNAAnalyzer
 {
@@ -26,6 +36,7 @@ private:
     inline void commandNew(int argc, char** argv);
 
     CLI*                            m_cli;
+    MemoryController        m_memoryController;
     static commandsCallbackMap      m_commandsMap;
 };
 

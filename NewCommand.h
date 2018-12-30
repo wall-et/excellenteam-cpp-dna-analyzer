@@ -10,11 +10,12 @@
 class NewCommand : public ICommand
 {
 public:
-//    NewCommand();
+//    NewCommand(MemoryController&);
     ~NewCommand();
-    void run(int argc, char** argv);
+    void run(int argc, char** argv,MemoryController&);
 
 private:
+
 };
 
 #endif //EXCELLENTEAM_ELLA_C_DNA_WALL_ET_NEWCOMMAND_H

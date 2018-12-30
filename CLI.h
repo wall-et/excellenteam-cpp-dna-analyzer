@@ -12,16 +12,21 @@
 #include <map>
 #include "Parser.h"
 
-typedef void (*CommandFunction)(int argc,char ** argv); // function pointer type
-
+//typedef void (*CommandFunction)(int argc,char ** argv); // function pointer type
+typedef struct
+{
+    int argc;
+    char** argv
+} commandArgs;
 
 class CLI
 {
 public:
-    CLI(CommandFunction);
+//    CLI();
+//    CLI(CommandFunction);
     ~CLI();
 //    static CLI* getInstance(CommandFunction);
-    void run();
+    void run(commandArgs*);
 
 private:
     inline void readLine();
@@ -29,7 +34,7 @@ private:
     inline void executeCommand();
 
     Parser              m_parser;
-    CommandFunction     m_commandCallback;
+//    CommandFunction     m_commandCallback;
     char                m_fullCommand[1000];
     int                 m_argc;
     char*               m_argv[10];

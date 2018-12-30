@@ -4,18 +4,17 @@
 
 #include <iostream>
 #include "NewCommand.h"
+#include "DNASequence.h"
 
-//NewCommand::NewCommand()
-//{
-//    std::cout << "new command ctor" << std::endl;
-//}
 
 NewCommand::~NewCommand()
 {
     std::cout << "new command dtor" << std::endl;
 }
 
-void NewCommand::run(int argc, char** argv)
+void NewCommand::run(int argc, char** argv,MemoryController&)
 {
+    IDNAp newdnap(new DNASequence(argv[1]));
     std::cout << "new command running" << std::endl;
+//    return newdnap;
 }

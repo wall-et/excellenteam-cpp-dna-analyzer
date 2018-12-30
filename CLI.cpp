@@ -12,8 +12,7 @@ CLI::CLI(CommandFunction cb)
 
 void CLI::run()
 {
-
-    while(true)
+//    while(true)
     {
         std::cout << "cmd >>>";
         readLine();

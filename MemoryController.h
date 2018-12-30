@@ -14,14 +14,14 @@ class MemoryController
 {
 public:
 //    MemoryController();
-    void createDNA(char*, char*);
+    void addDNA(char*, IDNAp);
     void loadDNA(char*);
     IDNAp getDNA(char*) const;
     void saveDNA(char*);
     void deleteDNA(char*);
 private:
-    inline void createDNAById(char*);
-    inline void createDNAByName(char*);
+    inline void addDNAById(char*,IDNAp);
+    inline void addDNAByName(char*,IDNAp);
     inline void loadDNAById(char*);
     inline void loadDNAByName(char*);
     inline IDNAp getDNAById(char*);

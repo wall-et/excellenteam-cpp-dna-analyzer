@@ -8,32 +8,17 @@
 #include <iostream>
 
 #include "SharedPtr.h"
+#include "Nucleotide.h"
 
 class IDNA
 {
 public:
-    IDNA();
-    virtual ~IDNA();
+//    IDNA();
+    virtual ~IDNA(){};
 protected:
     virtual unsigned long getDNALength() const = 0 ;
-    virtual char operator[](const size_t index) = 0;
-    class Nucleotide
-    {
-    protected:
-        Nucleotide(char c ='A');
+    virtual Nucleotide operator[](const size_t index) = 0;
 
-        bool operator == (char);
-        Nucleotide* operator = (char);
-        Nucleotide* operator = (Nucleotide);
-        operator char()
-        {
-            return m_singleNucleotide;
-        };
-
-        char m_singleNucleotide;
-    private:
-//        void check_if_valid(char c_to_check);
-    };
 private:
     static size_t m_dnasCounter;
 };
