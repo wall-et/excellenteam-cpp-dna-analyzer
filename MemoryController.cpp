@@ -11,8 +11,7 @@ void MemoryController::addDNA(DNAIdentifier ids, IDNAp seq)
     m_activeDNA.addDNA(ids,seq);
 }
 
-void MemoryController::getDNA(DNAIdentifier ids) const
+IDNAp MemoryController::getDNA(DNAIdentifier ids) const
 {
-    DNAIdentifier ids = {name,idNumber};
-    m_activeDNA.addDNA(ids,seq);
+    return m_activeDNA.getDNA(ids);
 }

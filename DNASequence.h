@@ -19,6 +19,8 @@ public:
 
     unsigned long getDNALength() const;
     Nucleotide operator[](const size_t index);
+    std::string getName() const;
+    size_t getId() const;
 private:
     void init_sequence(const char* const);
 

@@ -7,29 +7,16 @@
 
 void ActiveDNACache::addDNA(DNAIdentifier ids,IDNAp seq)
 {
-//    m_DNAContainer.insert(std::pair<DNAIdentifier,IDNAp>(ids,seq));
-//    m_DNAContainer.insert({ids,seq});
-    addDNAById(ids,seq);
-    addDNAByName(ids,seq);
-//    std::cout << seq << std::endl;
+    addDNAById(seq);
+    addDNAByName(ids.name,seq);
 }
-//
-//IDNAp ActiveDNACache::getDNA(DNAIdentifier ids)
-//{
-//    try
-//    {
-////        if(ids.name != NULL)
-////        {
-////            return getDNAByName(ids.name);
-////        }
-////        if(ids.id != NULL)
-////        {
-////            return getDNAById(ids.id);
-////        }
-//    }
-//    catch(...)
-//    {
-//
-//
-//    }
-//}
+
+IDNAp ActiveDNACache::getDNA(DNAIdentifier ids) const
+{
+        if (ids.id)
+        {
+            return getDNAById(ids.id);
+        }
+        std::cout << ids.name << std::endl;
+        return getDNAByName(ids.name);
+}

@@ -55,3 +55,12 @@ Nucleotide DNASequence::operator[](const size_t index)
 {
     return m_seq[index];
 }
+
+std::string DNASequence::getName() const
+{
+    return IDNA::m_dnaName;
+}
+size_t DNASequence::getId() const
+{
+    return IDNA::m_dnaId;
+}

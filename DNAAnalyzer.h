@@ -10,10 +10,7 @@
 #include "SharedPtr.h"
 #include "ICommand.h"
 #include "NewCommand.h"
-//#include "Commands/ExitCommand.h"
-//#include "Commands/LoadCommand.h"
-//#include "Commands/PrintCommand.h"
-//#include "Commands/SaveCommand.h"
+#include "PrintCommand.h"
 
 
 #ifndef IDNAP

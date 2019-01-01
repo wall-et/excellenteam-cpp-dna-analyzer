@@ -28,6 +28,11 @@ void DNAAnalyzer::excuteCommand()
         ICommand* newC = new NewCommand();
         newC->run(m_args->argc,m_args->argv,m_memoryController);
     }
+    if(strcmp(m_args->argv[0],"print")==0)
+    {
+        ICommand* newC = new PrintCommand();
+        newC->run(m_args->argc,m_args->argv,m_memoryController);
+    }
     if(strcmp(m_args->argv[0],"exit")==0)
     {
         exit(0);
