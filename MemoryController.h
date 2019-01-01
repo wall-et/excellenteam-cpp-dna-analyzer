@@ -14,9 +14,9 @@ class MemoryController
 {
 public:
 //    MemoryController();
-    void addDNA(size_t,char*, IDNAp);
+    void addDNA(DNAIdentifier, IDNAp);
 //    void loadDNA(char*);
-//    IDNAp getDNA(char*) const;
+    IDNAp getDNA(DNAIdentifier) const;
 //    void saveDNA(char*);
 //    void deleteDNA(char*);
 private:
@@ -24,8 +24,8 @@ private:
 //    inline void addDNAByName(char*,IDNAp);
 //    inline void loadDNAById(char*);
 //    inline void loadDNAByName(char*);
-    inline IDNAp getDNAById(char*);
-    inline IDNAp getDNAByName(char*);
+//    inline IDNAp getDNAById(char*);
+//    inline IDNAp getDNAByName(char*);
 ////    inline void saveDNAById(char*);
 ////    inline void saveDNAByName(char*);
 //    inline void deleteDNAById(char*);

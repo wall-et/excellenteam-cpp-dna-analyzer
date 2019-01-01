@@ -9,7 +9,7 @@
 class PrintCommand : public ICommand
 {
 public:
-//    PrintCommand(MemoryController&);
+    PrintCommand();
     ~PrintCommand();
     void run(int argc, char** argv,MemoryController&);
 
