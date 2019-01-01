@@ -13,3 +13,23 @@ void ActiveDNACache::addDNA(DNAIdentifier ids,IDNAp seq)
     addDNAByName(ids,seq);
 //    std::cout << seq << std::endl;
 }
+//
+//IDNAp ActiveDNACache::getDNA(DNAIdentifier ids)
+//{
+//    try
+//    {
+////        if(ids.name != NULL)
+////        {
+////            return getDNAByName(ids.name);
+////        }
+////        if(ids.id != NULL)
+////        {
+////            return getDNAById(ids.id);
+////        }
+//    }
+//    catch(...)
+//    {
+//
+//
+//    }
+//}

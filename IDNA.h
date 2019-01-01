@@ -5,6 +5,7 @@
 #ifndef EXCELLENTEAM_ELLA_C_DNA_WALL_ET_IDNA_H
 #define EXCELLENTEAM_ELLA_C_DNA_WALL_ET_IDNA_H
 
+#include <string>
 #include <iostream>
 
 #include "SharedPtr.h"
@@ -19,8 +20,11 @@ protected:
     virtual unsigned long getDNALength() const = 0 ;
     virtual Nucleotide operator[](const size_t index) = 0;
 
+    static size_t           m_dnasCounter;
+    std::string             m_dnaName;
+    size_t                  m_dnaId;
 private:
-    static size_t m_dnasCounter;
 };
+
 
 #endif //EXCELLENTEAM_ELLA_C_DNA_WALL_ET_IDNA_H

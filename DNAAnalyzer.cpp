@@ -15,7 +15,6 @@ void DNAAnalyzer::run(){
 
     while(true)
     {
-//        std::cout << "point 1" <<std::endl;
         m_cli.run(m_args);
         excuteCommand();
 //        std::cout << "point 2" <<std::endl;

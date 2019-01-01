@@ -5,18 +5,13 @@
 #include <iostream>
 #include "DNASequence.h"
 
-DNASequence::DNASequence(const char* const dnaSeq)
-{
-    m_seq = NULL;
+size_t DNASequence::IDNA::m_dnasCounter = 0;
 
-    try
-    {
-        init_sequence(dnaSeq);
-    }
-    catch (std::invalid_argument e)
-    {
-        throw std::invalid_argument("invalid_argument");
-    }
+DNASequence::DNASequence(char* inputName, const char* const dnaSeq)
+{
+    setDNASequence(dnaSeq);
+    setName(inputName);
+    setId();
 }
 
 DNASequence::~DNASequence()
