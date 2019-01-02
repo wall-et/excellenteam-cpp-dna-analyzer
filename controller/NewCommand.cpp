@@ -14,8 +14,10 @@ NewCommand::~NewCommand()
 
 void NewCommand::run(int argc, char** argv,MemoryController& mem)
 {
-    IDNAp newdnap(new DNASequence(argv[2],argv[1]));
-    DNAIdentifier ids = {argv[2],0};
-    mem.addDNA(ids,newdnap);
+    DNAIdentifier ids = createDNAId(argc,argv);
+    IDNAp newdnap(new DNASequence(ids.name,argv[1]));
+    mem.addDNA(newdnap);
+//    ICommand* pC = new PrintCommand();
+//    pC->run(m_args->argc,m_args->argv,mem);
 }
 

@@ -5,9 +5,9 @@
 #ifndef EXCELLENTEAM_ELLA_C_DNA_WALL_ET_ICOMMAND_H
 #define EXCELLENTEAM_ELLA_C_DNA_WALL_ET_ICOMMAND_H
 
-#include "SharedPtr.h"
+#include "../lib/SharedPtr.h"
 
-#include "MemoryController.h"
+#include "../model/MemoryController.h"
 #ifndef IDNAP
 #define IDNAP
 #include "IDNA.h"
@@ -20,6 +20,9 @@ public:
 //    ICommand(MemoryController&);
     virtual ~ICommand(){};
     virtual void run(int argc, char** argv,MemoryController&) = 0;
+
+protected:
+//    virtual DNAIdentifier createDNAId(int argc, char** argv);
 private:
 //    MemoryController& m_memoryController;
 };

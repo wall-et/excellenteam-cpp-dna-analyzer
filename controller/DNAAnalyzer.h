@@ -5,9 +5,9 @@
 #ifndef EXCELLENTEAM_ELLA_C_DNA_WALL_ET_COMMANDINTERPETER_H
 #define EXCELLENTEAM_ELLA_C_DNA_WALL_ET_COMMANDINTERPETER_H
 
-#include "CLI.h"
-#include "MemoryController.h"
-#include "SharedPtr.h"
+#include "../view/CLI.h"
+#include "../model/MemoryController.h"
+#include "../lib/SharedPtr.h"
 #include "ICommand.h"
 #include "NewCommand.h"
 #include "PrintCommand.h"

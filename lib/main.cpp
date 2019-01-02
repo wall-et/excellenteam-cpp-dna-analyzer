@@ -5,12 +5,12 @@
 #include <iostream>
 
 #include "SharedPtr.h"
-#include "Parser.h"
-#include "DNAAnalyzer.h"
-#include "CLI.h"
-#include "ActiveDNACache.h"
-#include "IDNA.h"
-#include "ICommand.h"
+#include "../view/Parser.h"
+#include "../controller/DNAAnalyzer.h"
+#include "../view/CLI.h"
+#include "../model/ActiveDNACache.h"
+#include "../controller/IDNA.h"
+#include "../controller/ICommand.h"
 
 
 int main(){

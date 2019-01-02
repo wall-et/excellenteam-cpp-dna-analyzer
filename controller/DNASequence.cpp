@@ -7,7 +7,7 @@
 
 size_t DNASequence::IDNA::m_dnasCounter = 0;
 
-DNASequence::DNASequence(char* inputName, const char* const dnaSeq)
+DNASequence::DNASequence(std::string inputName, const char* const dnaSeq)
 {
     setDNASequence(dnaSeq);
     setName(inputName);
@@ -60,6 +60,7 @@ std::string DNASequence::getName() const
 {
     return IDNA::m_dnaName;
 }
+
 size_t DNASequence::getId() const
 {
     return IDNA::m_dnaId;

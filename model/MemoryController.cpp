@@ -5,13 +5,14 @@
 #include "MemoryController.h"
 
 
-void MemoryController::addDNA(DNAIdentifier ids, IDNAp seq)
+void MemoryController::addDNA(IDNAp seq)
 {
 //    DNAIdentifier ids = {name,idNumber};
-    m_activeDNA.addDNA(ids,seq);
+    m_activeDNA.addDNA(seq);
+//    return IDNAp;
 }
 
-IDNAp MemoryController::getDNA(DNAIdentifier ids) const
+IDNAp MemoryController::getDNA(DNAIdentifier ids)
 {
     return m_activeDNA.getDNA(ids);
 }

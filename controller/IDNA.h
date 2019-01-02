@@ -8,7 +8,7 @@
 #include <string>
 #include <iostream>
 
-#include "SharedPtr.h"
+#include "../lib/SharedPtr.h"
 #include "Nucleotide.h"
 
 class IDNA

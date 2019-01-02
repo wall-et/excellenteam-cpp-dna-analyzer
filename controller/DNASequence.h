@@ -14,7 +14,7 @@
 class DNASequence : public IDNA
 {
 public:
-    explicit DNASequence(char*,const char* const);
+    explicit DNASequence(std::string,const char* const);
     ~DNASequence();
 
     unsigned long getDNALength() const;
@@ -25,31 +25,31 @@ private:
     void init_sequence(const char* const);
 
     inline void setDNASequence(const char* const);
-    inline void setName(char*);
+    inline void setName(std::string);
     inline void setId();
 
     Nucleotide* m_seq;
     unsigned long m_seqLength;
 };
 
-void DNASequence::setName(char* nameArg)
+void DNASequence::setName(std::string nameArg)
 {
-    if(nameArg)
+    if(!nameArg.empty())
     {
         m_dnaName = nameArg;
     }
     else
     {
         std::ostringstream ostr;
-        ostr <<"seq" << m_dnasCounter+1;
+        ostr <<"seq" << (m_dnasCounter + 1);
         m_dnaName = ostr.str();
     }
-    std::cout << "new dna created with name " << m_dnaName << std::endl;
+//    std::cout << "new dna created with name " << m_dnaName << std::endl;
 }
 
 void DNASequence::setId()
 {
-    m_dnaId = m_dnasCounter++;
+    m_dnaId = ++m_dnasCounter;
 }
 
 void DNASequence::setDNASequence(const char* const dnaSeq)

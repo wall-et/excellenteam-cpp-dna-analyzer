@@ -5,18 +5,17 @@
 #include "ActiveDNACache.h"
 #include <iostream>
 
-void ActiveDNACache::addDNA(DNAIdentifier ids,IDNAp seq)
+void ActiveDNACache::addDNA(IDNAp seq)
 {
     addDNAById(seq);
-    addDNAByName(ids.name,seq);
+    addDNAByName(seq);
 }
 
-IDNAp ActiveDNACache::getDNA(DNAIdentifier ids) const
+IDNAp ActiveDNACache::getDNA(DNAIdentifier ids)
 {
         if (ids.id)
         {
             return getDNAById(ids.id);
         }
-        std::cout << ids.name << std::endl;
         return getDNAByName(ids.name);
 }
