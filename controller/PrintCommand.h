@@ -48,7 +48,7 @@ DNAIdentifier PrintCommand::createDNAId(int argc, char** argv)
     DNAIdentifier ids = {"",0};
     if(argv[argc-1][0] == '@')
     {
-        ids.name = argv[argc-1][1];
+        ids.name = ++argv[argc-1];
         return ids;
     }
     if(argv[argc-1][0] == '#')
