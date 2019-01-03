@@ -43,26 +43,21 @@ DNAIdentifier PrintCommand::createDNAId(int argc, char** argv)
 {
     if(argc < 2)
     {
-        throw std::invalid_argument("not enough parameters to command");
+        throw std::invalid_argument("Not enough parameters included in command.");
     }
     DNAIdentifier ids = {"",0};
-    for(int i = 0; i< argc; ++i)
+    if(argv[argc-1][0] == '@')
     {
-        std::string str(argv[i]);
-        if(str.find("@") != std::string::npos)
-        {
-            str.erase (0,1);
-            ids.name = str;
-            return ids;
-        }
-        if(str.find("#") != std::string::npos)
-        {
-            str.erase (0,1);
-            ids.id = static_cast<size_t>(atoi(str.c_str()));
-            return ids;
-        }
+        ids.name = argv[argc-1][1];
+        return ids;
     }
-    throw std::invalid_argument("wrong parameters to command");
+    if(argv[argc-1][0] == '#')
+    {
+        ids.id = (argv[argc-1][1] - '0');
+        return ids;
+    }
+
+    throw std::invalid_argument("Wrong parameters to command. You can specify a name using @ or Id using #.");
 }
 
 #endif //EXCELLENTEAM_ELLA_C_DNA_WALL_ET_PRINTCOMMAND_H

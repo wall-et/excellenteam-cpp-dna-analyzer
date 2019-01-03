@@ -24,25 +24,18 @@ DNAIdentifier NewCommand::createDNAId(int argc, char** argv)
 {
     if(argc < 2)
     {
-        std::cout << "??";
-        throw std::invalid_argument("not enough parameters to command");
-    }
-
-    for(int i = 0; i< argc; ++i)
-    {
-        std::string str(argv[i]);
-        if(str.find("@") != std::string::npos)
-        {
-            str.erase (0,1);
-            DNAIdentifier ids = {str,0};
-            return ids;
-        }
-        if(str.find("#") != std::string::npos)
-        {
-            throw std::invalid_argument("wrong parameters to command");
-        }
+        throw std::invalid_argument("Not enough parameters included in command.");
     }
     DNAIdentifier ids = {"",0};
+    if(argv[argc-1][0] == '@')
+    {
+        ids.name = argv[argc-1][1];
+        return ids;
+    }
+    if(argv[argc-1][0] == '#')
+    {
+        throw std::invalid_argument("Wrong parameters to command. You can specify a name using @.");
+    }
     return ids;
 }
 #endif //EXCELLENTEAM_ELLA_C_DNA_WALL_ET_NEWCOMMAND_H

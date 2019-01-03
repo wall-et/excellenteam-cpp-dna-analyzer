@@ -13,7 +13,7 @@
 
 void Parser::parseString(char* fullCommand, int* argc, char** argv)
 {
-    const char delim[]={'\t','\n',' '};
+    const char delim[]={'\t','\n',' ','\0'};
     int i;
     i= 0;
 
