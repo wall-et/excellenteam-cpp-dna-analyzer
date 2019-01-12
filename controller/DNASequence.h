@@ -5,22 +5,22 @@
 #ifndef EXCELLENTEAM_ELLA_C_DNA_WALL_ET_DNASEQUENCE_H
 #define EXCELLENTEAM_ELLA_C_DNA_WALL_ET_DNASEQUENCE_H
 
-#include "IDNA.h"
+#include "DNA.h"
 #include "Nucleotide.h"
 #include <sstream>  //include this to use string streams
 #include <string>
 #include <cstring>
 
-class DNASequence : public IDNA
+class DNASequence : public DNA
 {
 public:
     explicit DNASequence(std::string,const char* const);
     ~DNASequence();
 
-    unsigned long getDNALength() const;
-    Nucleotide operator[](const size_t index);
-    std::string getName() const;
-    size_t getId() const;
+//    unsigned long getDNALength() const;
+//    Nucleotide operator[](const size_t index);
+//    std::string getName() const;
+//    size_t getId() const;
 private:
     void init_sequence(const char* const);
 

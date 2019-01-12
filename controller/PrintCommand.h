@@ -53,7 +53,7 @@ DNAIdentifier PrintCommand::createDNAId(int argc, char** argv)
     }
     if(argv[argc-1][0] == '#')
     {
-        ids.id = (argv[argc-1][1] - '0');
+        ids.id = atoi(++argv[argc-1]);
         return ids;
     }
 

@@ -13,11 +13,11 @@ DNASequence::DNASequence(std::string inputName, const char* const dnaSeq)
     setName(inputName);
     setId();
 }
-
-DNASequence::~DNASequence()
-{
-    delete[] m_seq;
-}
+//
+//DNASequence::~DNASequence()
+//{
+//    delete[] m_seq;
+//}
 
 void DNASequence::init_sequence(const char* const dnaSeq)
 {
@@ -46,22 +46,22 @@ void DNASequence::init_sequence(const char* const dnaSeq)
     }
 }
 
-unsigned long DNASequence::getDNALength() const
-{
-    return m_seqLength;
-}
-
-Nucleotide DNASequence::operator[](const size_t index)
-{
-    return m_seq[index];
-}
-
-std::string DNASequence::getName() const
-{
-    return IDNA::m_dnaName;
-}
-
-size_t DNASequence::getId() const
-{
-    return IDNA::m_dnaId;
-}
+//unsigned long DNASequence::getDNALength() const
+//{
+//    return m_seqLength;
+//}
+//
+//Nucleotide DNASequence::operator[](const size_t index)
+//{
+//    return m_seq[index];
+//}
+//
+//std::string DNASequence::getName() const
+//{
+//    return IDNA::m_dnaName;
+//}
+//
+//size_t DNASequence::getId() const
+//{
+//    return IDNA::m_dnaId;
+//}
