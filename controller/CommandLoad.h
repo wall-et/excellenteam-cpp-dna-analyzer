@@ -15,9 +15,7 @@ class CommandLoad : public Command
 public:
     ~CommandLoad();
     void run(int argc, char** argv, MemoryController&);
-
 private:
-    DNAReader           m_DNAReader;
 };
 
 

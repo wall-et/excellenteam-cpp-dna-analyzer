@@ -9,42 +9,17 @@ CommandLoad::~CommandLoad()
     std::cout << "LoadCommand dtor" << std::endl;
 }
 
-//void createSeqWithDefName( const char* seq, memoryCtrl & memctrl)
-//{
-//    IDNAp newDna(new DnaSequence (seq, ""));
-//    memctrl.addDnaSeq(newDna->getIdSeq(), newDna->getNameSeq(), newDna );
-//    std::cout << "def name" << std::endl;
-//}
-
-//void createSeq( const char* seq, char* keyName, memoryCtrl & memctrl)
-//{
-//
-//    IDNAp newDna(new DnaSequence (seq, keyName));
-//    memctrl.addDnaSeq(newDna->getIdSeq(), newDna->getNameSeq(), newDna );
-//    std::cout << "name is ---- " << keyName << std::endl;
-//
-//}
-
 void CommandLoad::run(int argc, char ** argv, MemoryController & mem)
 {
+    //TODO:parse file name acording to dna name if given
     DNAIdentifier ids;
     ids.name = createDNAIdName(argc,argv);
-    ids.id = createDNAIdNumber(argc,argv);
+    ids.id = 0;
 
     if(argc < 1)
     {
         throw std::invalid_argument("Not enough parameters included in command.");
     }
-    //TODO:validate that it's int
-
-    if (! m_DNAReader.fileExist(argv[1]))
-    {
-        throw std::invalid_argument("File Does Not Exist.");
-    }
-
-    std::string seqFromFile = m_DNAReader.readFile(argv[1]);
-
-    IDNAp newdnap(new DNASequence(ids.name,seqFromFile.c_str()));
-    mem.addDNA(newdnap);
-
+    std::cout << argv[1] << std::endl;
+    mem.loadDNAFromFile(argv[1],ids);
 }

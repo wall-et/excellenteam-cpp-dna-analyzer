@@ -7,6 +7,11 @@
 
 std::string DNAReader::readFile(std::string fileName)
 {
+    if (!fileExist(fileName.c_str()))
+    {
+        throw std::invalid_argument("File Does Not Exist.");
+    }
+
     std::filebuf fb;
 
     fb.open(fileName.c_str(), std::ios::in);
@@ -22,6 +27,7 @@ std::string DNAReader::readFile(std::string fileName)
 
 bool DNAReader::fileExist(const char * fileName)
 {
+
     std::ifstream infile(fileName);
     return infile.good();
 }

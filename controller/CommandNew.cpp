@@ -14,12 +14,11 @@ CommandNew::~CommandNew()
 
 void CommandNew::run(int argc, char** argv,MemoryController& mem)
 {
-    DNAIdentifier ids;
-    ids.name = createDNAIdName(argc,argv);
+    DNAIdentifier ids = createDNAId(argc,argv);
 
     //TODO:???? maybe validate argv[1]????
 
     IDNAp newdnap(new DNASequence(ids.name,argv[1]));
-    mem.addDNA(newdnap);
+    mem.addDNAToCache(newdnap);
 }
 

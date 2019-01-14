@@ -15,19 +15,19 @@ public:
     void run(int argc, char** argv,MemoryController&);
 
 private:
-    inline DNAIdentifier createDNAId(int argc, char** argv);
-    inline IDNAp getDNAFromMemory(DNAIdentifier, MemoryController&);
-    inline void printDNASequence(IDNAp);
+//    inline DNAIdentifier createDNAId(int argc, char** argv);
+//    inline IDNAp getDNAFromMemory(DNAIdentifier, MemoryController&);
+    void printDNASequence(IDNAp);
 };
 
+//
+//IDNAp CommandPrint::getDNAFromMemory(DNAIdentifier ids, MemoryController& mem)
+//{
+//    return mem.getDNA(ids);
+//}
 
-IDNAp CommandPrint::getDNAFromMemory(DNAIdentifier ids, MemoryController& mem)
-{
-    return mem.getDNA(ids);
-}
 
-
-void CommandPrint::printDNASequence(IDNAp dna)
+inline void CommandPrint::printDNASequence(IDNAp dna)
 {
     size_t size = dna->getDNALength();
     std::cout << "[" << dna->getId() << "] " << dna->getName() << ": ";
@@ -39,25 +39,25 @@ void CommandPrint::printDNASequence(IDNAp dna)
 }
 
 
-DNAIdentifier CommandPrint::createDNAId(int argc, char** argv)
-{
-    if(argc < 2)
-    {
-        throw std::invalid_argument("Not enough parameters included in command.");
-    }
-    DNAIdentifier ids = {"",0};
-    if(argv[argc-1][0] == '@')
-    {
-        ids.name = ++argv[argc-1];
-        return ids;
-    }
-    if(argv[argc-1][0] == '#')
-    {
-        ids.id = atoi(++argv[argc-1]);
-        return ids;
-    }
-
-    throw std::invalid_argument("Wrong parameters to command. You can specify a name using @ or Id using #.");
-}
+//DNAIdentifier CommandPrint::createDNAId(int argc, char** argv)
+//{
+//    if(argc < 2)
+//    {
+//        throw std::invalid_argument("Not enough parameters included in command.");
+//    }
+//    DNAIdentifier ids = {"",0};
+//    if(argv[argc-1][0] == '@')
+//    {
+//        ids.name = ++argv[argc-1];
+//        return ids;
+//    }
+//    if(argv[argc-1][0] == '#')
+//    {
+//        ids.id = atoi(++argv[argc-1]);
+//        return ids;
+//    }
+//
+//    throw std::invalid_argument("Wrong parameters to command. You can specify a name using @ or Id using #.");
+//}
 
 #endif //EXCELLENTEAM_ELLA_C_DNA_WALL_ET_PRINTCOMMAND_H

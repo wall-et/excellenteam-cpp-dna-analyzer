@@ -27,15 +27,24 @@ void DNAAnalyzer::excuteCommand()
     {
         if(strcmp(m_args->argv[0],"new")==0)
         {
-            ICommand* newC = new NewCommand();
+            ICommand* newC = new CommandNew();
             newC->run(m_args->argc,m_args->argv,m_memoryController);
-//            ICommand* newCp = new PrintCommand();
-//            newCp->run(m_args->argc,m_args->argv,m_memoryController);
+            //TODO:print command after new
 
         }
         if(strcmp(m_args->argv[0],"print")==0)
         {
-            ICommand* newC = new PrintCommand();
+            ICommand* newC = new CommandPrint();
+            newC->run(m_args->argc,m_args->argv,m_memoryController);
+        }
+        if(strcmp(m_args->argv[0],"save")==0)
+        {
+            ICommand* newC = new CommandSave();
+            newC->run(m_args->argc,m_args->argv,m_memoryController);
+        }
+        if(strcmp(m_args->argv[0],"load")==0)
+        {
+            ICommand* newC = new CommandLoad();
             newC->run(m_args->argc,m_args->argv,m_memoryController);
         }
         if(strcmp(m_args->argv[0],"exit")==0)

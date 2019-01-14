@@ -16,7 +16,12 @@ CommandPrint::~CommandPrint()
 
 void CommandPrint::run(int argc, char** argv,MemoryController& mem)
 {
-    DNAIdentifier ids = createDNAId(argc,argv);
-    IDNAp dnap = getDNAFromMemory(ids,mem);
+//    DNAIdentifier ids = createDNAId(argc,argv);
+    DNAIdentifier ids;
+    ids.name = createDNAIdName(argc,argv);
+    ids.id = createDNAIdNumber(argc,argv);
+
+    IDNAp dnap = mem.getDNAFromCache(ids);
+
     printDNASequence(dnap);
 }

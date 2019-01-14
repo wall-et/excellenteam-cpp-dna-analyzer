@@ -9,8 +9,9 @@
 
 void DNAWriter::writeFile(std::string fileName,IDNAp dna)
 {
-
-    m_writer.open(fileName.c_str());
+    std::string suffix = ".rawdna";
+    std::string n = fileName + suffix;
+    m_writer.open(n.c_str());
 
     int size = dna->getDNALength();
 

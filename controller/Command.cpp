@@ -23,6 +23,7 @@ std::string Command::createDNAIdName(int argunebtCount, char** argv, int locatio
     {
         throw std::invalid_argument("Not enough parameters included in command.");
     }
+//    std::cout <<  argv[argunebtCount + locationFromEnd] << std::endl;
     if(argv[argunebtCount + locationFromEnd][0] == '@')
     {
         return ++argv[argunebtCount + locationFromEnd];

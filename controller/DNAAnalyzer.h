@@ -11,6 +11,8 @@
 #include "ICommand.h"
 #include "CommandNew.h"
 #include "CommandPrint.h"
+#include "CommandLoad.h"
+#include "CommandSave.h"
 
 
 #ifndef IDNAP
