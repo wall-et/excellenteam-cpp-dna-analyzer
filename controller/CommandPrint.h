@@ -7,11 +7,11 @@
 #include "Command.h"
 #include <cstdlib>
 
-class PrintCommand : public Command
+class CommandPrint : public Command
 {
 public:
 //    PrintCommand();
-    ~PrintCommand();
+    ~CommandPrint();
     void run(int argc, char** argv,MemoryController&);
 
 private:
@@ -21,13 +21,13 @@ private:
 };
 
 
-IDNAp PrintCommand::getDNAFromMemory(DNAIdentifier ids, MemoryController& mem)
+IDNAp CommandPrint::getDNAFromMemory(DNAIdentifier ids, MemoryController& mem)
 {
     return mem.getDNA(ids);
 }
 
 
-void PrintCommand::printDNASequence(IDNAp dna)
+void CommandPrint::printDNASequence(IDNAp dna)
 {
     size_t size = dna->getDNALength();
     std::cout << "[" << dna->getId() << "] " << dna->getName() << ": ";
@@ -39,7 +39,7 @@ void PrintCommand::printDNASequence(IDNAp dna)
 }
 
 
-DNAIdentifier PrintCommand::createDNAId(int argc, char** argv)
+DNAIdentifier CommandPrint::createDNAId(int argc, char** argv)
 {
     if(argc < 2)
     {

@@ -2,9 +2,9 @@
 // Created by alian on 12/28/18.
 //
 
-#include "LoadCommand.h"
+#include "CommandLoad.h"
 
-LoadCommand::~LoadCommand()
+CommandLoad::~CommandLoad()
 {
     std::cout << "LoadCommand dtor" << std::endl;
 }
@@ -25,7 +25,7 @@ LoadCommand::~LoadCommand()
 //
 //}
 
-void LoadCommand::run(int argc, char ** argv, MemoryController & mem)
+void CommandLoad::run(int argc, char ** argv, MemoryController & mem)
 {
     DNAIdentifier ids;
     ids.name = createDNAIdName(argc,argv);

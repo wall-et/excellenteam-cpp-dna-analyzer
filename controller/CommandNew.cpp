@@ -3,16 +3,16 @@
 //
 
 #include <iostream>
-#include "NewCommand.h"
+#include "CommandNew.h"
 #include "DNASequence.h"
 
 
-NewCommand::~NewCommand()
+CommandNew::~CommandNew()
 {
     std::cout << "new command dtor" << std::endl;
 }
 
-void NewCommand::run(int argc, char** argv,MemoryController& mem)
+void CommandNew::run(int argc, char** argv,MemoryController& mem)
 {
     DNAIdentifier ids;
     ids.name = createDNAIdName(argc,argv);

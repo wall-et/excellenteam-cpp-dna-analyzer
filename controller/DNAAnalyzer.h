@@ -9,8 +9,8 @@
 #include "../model/MemoryController.h"
 #include "../lib/SharedPtr.h"
 #include "ICommand.h"
-#include "NewCommand.h"
-#include "PrintCommand.h"
+#include "CommandNew.h"
+#include "CommandPrint.h"
 
 
 #ifndef IDNAP

@@ -7,11 +7,11 @@
 
 #include "Command.h"
 
-class NewCommand : public Command
+class CommandNew : public Command
 {
 public:
 //    NewCommand(MemoryController&);
-    ~NewCommand();
+    ~CommandNew();
     void run(int argc, char** argv, MemoryController&);
 
 private:

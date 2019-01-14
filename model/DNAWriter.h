@@ -11,19 +11,24 @@
 #include "../controller/IDNA.h"
 #include "../lib/SharedPtr.h"
 
+#ifndef IDNAP
+#define IDNAP
+#include "../controller/IDNA.h"
 typedef SharedPtr<IDNA> IDNAp;
+#endif //IDNAP
+
 
 class DNAWriter
 {
 public:
 
-    DNAWriter(std::string, IDNAp);
-    void writeFile();
+//    DNAWriter(std::string, IDNAp);
+    void writeFile(std::string, IDNAp);
 
 private:
-    IDNAp                   m_dna;
+//    IDNAp                   m_dna;
     std::ofstream           m_writer;
-    std::string             m_fileName;
+//    std::string             m_fileName;
 
 };
 

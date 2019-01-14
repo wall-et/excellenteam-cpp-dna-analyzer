@@ -10,10 +10,10 @@
 #include "IDNA.h"
 #include "Command.h"
 
-class LoadCommand : public Command
+class CommandLoad : public Command
 {
 public:
-    ~LoadCommand();
+    ~CommandLoad();
     void run(int argc, char** argv, MemoryController&);
 
 private:

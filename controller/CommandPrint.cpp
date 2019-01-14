@@ -5,16 +5,16 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
-#include "PrintCommand.h"
+#include "CommandPrint.h"
 #include "DNASequence.h"
 
 
-PrintCommand::~PrintCommand()
+CommandPrint::~CommandPrint()
 {
     std::cout << "PrintCommand dtor" << std::endl;
 }
 
-void PrintCommand::run(int argc, char** argv,MemoryController& mem)
+void CommandPrint::run(int argc, char** argv,MemoryController& mem)
 {
     DNAIdentifier ids = createDNAId(argc,argv);
     IDNAp dnap = getDNAFromMemory(ids,mem);
