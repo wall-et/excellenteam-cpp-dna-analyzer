@@ -12,16 +12,10 @@
 class CommandSave : public Command
 {
 public:
-
     ~CommandSave();
     void run(int argc, char** argv, MemoryController&);
+    static Command * create();
 private:
-//    char * identifier;
-//    IDNAp dnaToSave;
-//    std::string fileName;
-//
-//    void setIdentifier(char **);
-//    void setFileName(int, char ** );
-//    void saveSeqToFile();
 };
+
 #endif //EXCELLENTEAM_ELLA_C_DNA_WALL_ET_SAVECOMMAND_H

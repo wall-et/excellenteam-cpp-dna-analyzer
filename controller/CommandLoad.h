@@ -6,8 +6,7 @@
 #define EXCELLENTEAM_ELLA_C_DNA_WALL_ET_LOAD_COMMAND_H
 
 #include <iostream>
-#include "../model/DNAReader.h"
-#include "IDNA.h"
+#include "../model/MemoryController.h"
 #include "Command.h"
 
 class CommandLoad : public Command
@@ -15,8 +14,11 @@ class CommandLoad : public Command
 public:
     ~CommandLoad();
     void run(int argc, char** argv, MemoryController&);
+
+    static Command *  create();
 private:
 };
+
 
 
 #endif //EXCELLENTEAM_ELLA_C_DNA_WALL_ET_LOAD_COMMAND_H

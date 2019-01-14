@@ -13,7 +13,7 @@ public:
 //    PrintCommand();
     ~CommandPrint();
     void run(int argc, char** argv,MemoryController&);
-
+    static Command * create();
 private:
 //    inline DNAIdentifier createDNAId(int argc, char** argv);
 //    inline IDNAp getDNAFromMemory(DNAIdentifier, MemoryController&);
@@ -29,6 +29,7 @@ private:
 
 inline void CommandPrint::printDNASequence(IDNAp dna)
 {
+    //TODO:print long dnas different
     size_t size = dna->getDNALength();
     std::cout << "[" << dna->getId() << "] " << dna->getName() << ": ";
     for(size_t i = 0; i<size; ++i)
@@ -38,26 +39,5 @@ inline void CommandPrint::printDNASequence(IDNAp dna)
     std::cout << std::endl;
 }
 
-
-//DNAIdentifier CommandPrint::createDNAId(int argc, char** argv)
-//{
-//    if(argc < 2)
-//    {
-//        throw std::invalid_argument("Not enough parameters included in command.");
-//    }
-//    DNAIdentifier ids = {"",0};
-//    if(argv[argc-1][0] == '@')
-//    {
-//        ids.name = ++argv[argc-1];
-//        return ids;
-//    }
-//    if(argv[argc-1][0] == '#')
-//    {
-//        ids.id = atoi(++argv[argc-1]);
-//        return ids;
-//    }
-//
-//    throw std::invalid_argument("Wrong parameters to command. You can specify a name using @ or Id using #.");
-//}
 
 #endif //EXCELLENTEAM_ELLA_C_DNA_WALL_ET_PRINTCOMMAND_H

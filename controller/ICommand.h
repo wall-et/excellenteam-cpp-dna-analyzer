@@ -7,6 +7,7 @@
 
 #include "../lib/SharedPtr.h"
 #include "../model/MemoryController.h"
+
 #ifndef IDNAP
 #define IDNAP
 #include "IDNA.h"

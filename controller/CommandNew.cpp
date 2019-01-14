@@ -22,3 +22,7 @@ void CommandNew::run(int argc, char** argv,MemoryController& mem)
     mem.addDNAToCache(newdnap);
 }
 
+Command * CommandNew::create()
+{
+    return new CommandNew();
+}

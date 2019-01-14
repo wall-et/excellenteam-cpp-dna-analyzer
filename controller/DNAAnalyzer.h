@@ -13,6 +13,7 @@
 #include "CommandPrint.h"
 #include "CommandLoad.h"
 #include "CommandSave.h"
+#include "CommandsFactory.h"
 
 
 #ifndef IDNAP

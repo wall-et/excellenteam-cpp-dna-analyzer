@@ -2,7 +2,7 @@
 TARGET=dnaAnalyzer
 
 # all .cpp files in this directory are my sources
-SOURCES=$(wildcard *.cpp) $(wildcard model/*.cpp) $(wildcard view/*.cpp) $(wildcard controller/*.cpp) $(wildcard lib/*.cpp)
+SOURCES=$(wildcard *.cpp) $(wildcard model/*.cpp) $(wildcard view/*.cpp) $(wildcard controller/commands*.cpp) $(wildcard controller/*.cpp)  $(wildcard lib/*.cpp)
 
 OBJS=$(SOURCES:.cpp=.o)
 

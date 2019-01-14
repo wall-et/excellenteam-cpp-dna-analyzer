@@ -33,3 +33,8 @@ void CommandSave::run(int argc, char** argv, MemoryController& mem)
     IDNAp dnap = mem.getDNAFromCache(ids);
     mem.saveDNAToFile(fileName,dnap);
 }
+
+Command * CommandSave::create()
+{
+    return new CommandSave();
+}

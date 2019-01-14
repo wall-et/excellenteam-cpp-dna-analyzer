@@ -25,3 +25,8 @@ void CommandPrint::run(int argc, char** argv,MemoryController& mem)
 
     printDNASequence(dnap);
 }
+
+Command * CommandPrint::create()
+{
+    return new CommandPrint();
+}

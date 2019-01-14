@@ -36,8 +36,8 @@ private:
     inline IDNAp getDNAById(size_t);
     inline IDNAp getDNAByName(std::string);
 
-    std::map<std::string, IDNAp>          m_DNAContainerByName;
-    std::map<size_t, IDNAp>         m_DNAContainerById;
+    std::map<std::string, IDNAp>            m_DNAContainerByName;
+    std::map<size_t, IDNAp>                 m_DNAContainerById;
 };
 
 void ActiveDNACache::addDNAByName(IDNAp seq)

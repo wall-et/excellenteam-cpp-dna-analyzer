@@ -22,3 +22,8 @@ void CommandLoad::run(int argc, char ** argv, MemoryController & mem)
     }
     mem.loadDNAFromFile(argv[1],name);
 }
+
+Command * CommandLoad::create()
+{
+    return new CommandLoad();
+}
