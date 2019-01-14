@@ -5,7 +5,7 @@
 #ifndef EXCELLENTEAM_ELLA_C_DNA_WALL_ET_NEWCOMMAND_H
 #define EXCELLENTEAM_ELLA_C_DNA_WALL_ET_NEWCOMMAND_H
 
-#include "ICommand.h"
+#include "Command.h"
 
 class NewCommand : public Command
 {

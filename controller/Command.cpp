@@ -2,21 +2,30 @@
 // Created by alian on 1/12/19.
 //
 
-DNAIdentifier Command::createDNAId(int argc, char** argv)
+#include "Command.h"
+
+size_t Command::createDNAIdNumber(int argunebtCount, char** argv, int locationFromEnd) const
 {
-    if(argc < 2)
+    if(argunebtCount + locationFromEnd <= 0)
     {
         throw std::invalid_argument("Not enough parameters included in command.");
     }
-    DNAIdentifier ids = {"",0};
-    if(argv[argc-1][0] == '@')
+    if(argv[argunebtCount + locationFromEnd][0] == '#')
     {
-        ids.name = ++argv[argc-1];
-        return ids;
+        return atoi(++argv[argunebtCount + locationFromEnd]);
     }
-    if(argv[argc-1][0] == '#')
+    return 0;
+}
+
+std::string Command::createDNAIdName(int argunebtCount, char** argv, int locationFromEnd) const
+{
+    if(argunebtCount + locationFromEnd <= 0)
     {
-        throw std::invalid_argument("Wrong parameters to command. You can specify a name using @.");
+        throw std::invalid_argument("Not enough parameters included in command.");
     }
-    return ids;
+    if(argv[argunebtCount + locationFromEnd][0] == '@')
+    {
+        return ++argv[argunebtCount + locationFromEnd];
+    }
+    return "";
 }

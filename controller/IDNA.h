@@ -17,7 +17,7 @@ public:
 //    IDNA();
     virtual ~IDNA(){};
     virtual unsigned long getDNALength() const = 0 ;
-    virtual Nucleotide operator[](const size_t index) = 0;
+    virtual Nucleotide operator[](const size_t index) const = 0;
     virtual std::string getName() const = 0;
     virtual size_t getId() const = 0;
 

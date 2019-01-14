@@ -8,9 +8,9 @@
 #include <iostream>
 #include "../model/DNAReader.h"
 #include "IDNA.h"
-#include "ICommand.h"
+#include "Command.h"
 
-class LoadCommand : public ICommand
+class LoadCommand : public Command
 {
 public:
     ~LoadCommand();

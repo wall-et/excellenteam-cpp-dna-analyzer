@@ -6,7 +6,6 @@
 #define EXCELLENTEAM_ELLA_C_DNA_WALL_ET_ICOMMAND_H
 
 #include "../lib/SharedPtr.h"
-
 #include "../model/MemoryController.h"
 #ifndef IDNAP
 #define IDNAP

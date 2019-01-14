@@ -17,8 +17,8 @@ public:
     explicit DNASequence(std::string,const char* const);
     ~DNASequence();
 
-//    unsigned long getDNALength() const;
-//    Nucleotide operator[](const size_t index);
+    unsigned long getDNALength() const;
+    Nucleotide operator[](const size_t index) const;
 //    std::string getName() const;
 //    size_t getId() const;
 private:

@@ -11,10 +11,10 @@ class DNA : public IDNA
 {
 public:
     ~DNA(){};
-    unsigned long getDNALength() const;
-    Nucleotide operator[](const size_t index) = 0;
-    std::string getName() const = 0;
-    size_t getId() const = 0;
+//    unsigned long getDNALength() const;
+//    Nucleotide operator[](const size_t index) const;
+    std::string getName() const;
+    size_t getId() const;
 
 protected:
 

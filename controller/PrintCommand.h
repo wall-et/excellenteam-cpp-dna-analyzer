@@ -4,10 +4,10 @@
 
 #ifndef EXCELLENTEAM_ELLA_C_DNA_WALL_ET_PRINTCOMMAND_H
 #define EXCELLENTEAM_ELLA_C_DNA_WALL_ET_PRINTCOMMAND_H
-#include "ICommand.h"
+#include "Command.h"
 #include <cstdlib>
 
-class PrintCommand : public ICommand
+class PrintCommand : public Command
 {
 public:
 //    PrintCommand();

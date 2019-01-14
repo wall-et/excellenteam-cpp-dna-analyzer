@@ -5,27 +5,27 @@
 #include "DNA.h"
 
 
-DNA::~DNA()
-{
-    delete[] m_seq;
-}
+//DNA::~DNA()
+//{
+//    delete[] m_seq;
+//}
 
-unsigned long DNA::getDNALength() const
-{
-    return m_seqLength;
-}
+//unsigned long DNA::getDNALength() const
+//{
+//    return m_seqLength;
+//}
 
-Nucleotide DNA::operator[](const size_t index)
-{
-    return m_seq[index];
-}
+//Nucleotide DNA::operator[](const size_t index) const
+//{
+//    return m_seq[index];
+//}
 
 std::string DNA::getName() const
 {
-    return IDNA::m_dnaName;
+    return m_dnaName;
 }
 
 size_t DNA::getId() const
 {
-    return IDNA::m_dnaId;
+    return m_dnaId;
 }
