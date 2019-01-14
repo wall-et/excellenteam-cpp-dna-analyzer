@@ -21,15 +21,10 @@ typedef SharedPtr<IDNA> IDNAp;
 class DNAWriter
 {
 public:
-
-//    DNAWriter(std::string, IDNAp);
     void writeFile(std::string, IDNAp);
 
 private:
-//    IDNAp                   m_dna;
     std::ofstream           m_writer;
-//    std::string             m_fileName;
-
 };
 
 

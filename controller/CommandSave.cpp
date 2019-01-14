@@ -16,35 +16,20 @@ CommandSave::~CommandSave()
     std::cout<<"CommandSave dtor" << std::endl;
 }
 
-//void save::setIdentifier( char ** argv )
-//{
-//    identifier = argv[minNumOfElements];
-//}
-//
-//void save::setFileName( int argc, char ** argv )
-//{
-//    //TODO - SWITCH/CASE
-//    if(argc == 2)
-//        fileName = argv[maxNumOfElements];
-//    else
-//        fileName = dnaToSave->getNameSeq() + ".rawdna";
-//}
-//
-//void save::saveSeqToFile()
-//{
-//    DnaWriter dnaWriter( fileName, dnaToSave );
-//    dnaWriter.write();
-//}
-//
-
 void CommandSave::run(int argc, char** argv, MemoryController& mem)
 {
-
     //TODO:parse name acording to file name if given
+    std::string fileName = "";
+    int location = -1;
+    if(argc > 2)
+    {
+        fileName = argv[argc-1];
+        location = -2;
+    }
     DNAIdentifier ids;
-    ids.name = createDNAIdName(argc,argv,-1);
-    ids.id = createDNAIdNumber(argc,argv,-1);
+    ids.name = createDNAIdName(argc,argv,location);
+    ids.id = createDNAIdNumber(argc,argv,location);
 
     IDNAp dnap = mem.getDNAFromCache(ids);
-    mem.saveDNAToFile(dnap);
+    mem.saveDNAToFile(fileName,dnap);
 }
